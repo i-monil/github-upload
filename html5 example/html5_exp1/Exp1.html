@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<body>
+<article>
+  <header>
+    <h1>WELCOME TO SAKEC</h1>
+    <p>Mission:</p>
+ 
+  <p>To impact high quality technical education to students by providing excellent academic environment , well equiped laboratories and training through motivated teachers.</p>
+  <p>Vision:</p>
+  </header>
+  <p>To become autonomous and achieve the objective of becoming a world class institution by utilizing academic freedom to improve educational quality and professional standards</p>
+
+
+<p>Image to use:</p>
+<img id="scream" src="C:\Users\admin\Desktop\html5 example\sakec.jpg" alt="The Scream"
+width="220" height="277">
+
+<p>Canvas to fill:</p>
+<canvas id="myCanvas" width="250" height="300"
+style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<p><button onclick="myCanvas()">Try it</button></p>
+
+<script>
+function myCanvas() {
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    var img = document.getElementById("scream");
+    ctx.drawImage(img,10,10);
+}
+</script>
+
+</article>
+<form action="CANVAS1.html" method="get">
+
+UserName: <input type="text" id="fname" size= "5" maxlength="5"><br>
+Color: <input type="color" name="mycolor"><br>
+Search: <input type="search" name="mysearch"><br>
+Phone No: <input type="tel" name="myphone"> <!-- working for any value like even alphabet taking--> <br>
+Our Website: <input type="url" name="sitepage"><br>
+Email: <input type="email" name="email"><br>
+Password: <input type="password" name="pw" size="10" maxlength="4" value="janet"><br>
+DOB: <input type="datetime-local" name="dob"><br>
+select Month <input type="month" name="mm"><br>
+select Week <input type="week" name="dd"><br>
+select Time <input type="time" name="tt"><br>
+Enter mobileno1. <input type="number" name="points" min="0" max="100" step="10" value="30"><br>
+Enter AGE. <input type="range" name="points" min="18" max="100"><br>
+
+<input type="file" name="img" accept="image/*"><br>
+<input type="hidden" id="country" value="India"><br>
+<input type="submit" onclick="alert('Hello,'+document.getElementById('fname').value+'from'+document.getElementById('country').value)" value="OK"><br>
+ 
+Check Box 
+<input type="checkbox" name="op1" value="Milk">Milk<br>
+<input type="checkbox" name="op2" value="Butter" checked="yes">Butter<br>
+<input type="checkbox" name="op3" value="Cheese">Cheese<br>
+
+Radio Button<!--name should be same otherwise it click on all option-->
+<input type="radio" name="op1" value="Milk">Milk<br>
+<input type="radio" name="op1" value="Butter" checked>Butter<br>
+<input type="radio" name="op1" value="Cheese">Cheese<br>
+
+<input type="reset" name"reset" value="reset"><br>
+<button type="submit" style="color:red;font-size:20px;"><b>Exit</b></button>
+
+<select>
+<option value="I.T">I.T</option>
+<option value="COMP">COMP</option>
+<option value="EXTC">EXTC</option>
+</select>
+
+<select>
+<optgroup label="s.e">
+<option value="I.T">I.T</option>
+<option value="COMP">COMP</option>
+<option value="EXTC">EXTC</option>
+</optgroup>
+<optgroup label="t.e">
+<option value="I.T">I.T</option>
+<option value="COMP">COMP</option>
+<option value="EXTC">EXTC</option>
+</optgroup>
+<optgroup label="b.e">
+<option value="I.T">I.T</option>
+<option value="COMP">COMP</option>
+<option value="EXTC">EXTC</option>
+</optgroup>
+</select>
+
+<textarea>
+Enter Comment
+</textarea>
+
+<fieldset>
+<legend>SignIn</legend>
+<label>Username:<input type="text"></label>
+<label>Password:<input type="password"></label>
+<label><input type="submit"></label>
+</fieldset>
+
+</form>
+<video id="myVideo" width="320" height="176" controls
+  <source src="C:\Users\admin\Desktop\html5 example\small.mp4" type=In/mp4">
+  
+  Your browser does not support HTML5 video.
+</video>
+
+<audio controls>
+  <source src="Kal.ogg" type="audio/ogg">
+  <source src="Kal.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+<p id="demo">Click the button to get your position.</p>
+
+<button onclick="getLocation()">Try It</button>
+
+<div id="mapholder"></div>
+
+<script>
+var x = document.getElementById("demo");
+
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+    } else {
+        x.innerHTML = "Geolocation is not supported by this browser.";
+    }
+}
+
+function showPosition(position) {
+    var latlon = position.coords.latitude + "," + position.coords.longitude;
+
+    var img_url = "http://maps.googleapis.com/maps/api/staticmap?center="
+    +latlon+"&zoom=14&size=400x300&sensor=false";
+    document.getElementById("mapholder").innerHTML = "<img src='"+img_url+"'>";
+}
+
+function showError(error) {
+    switch(error.code) {
+        case error.PERMISSION_DENIED:
+            x.innerHTML = "User denied the request for Geolocation."
+            break;
+        case error.POSITION_UNAVAILABLE:
+            x.innerHTML = "Location information is unavailable."
+            break;
+        case error.TIMEOUT:
+            x.innerHTML = "The request to get user location timed out."
+            break;
+        case error.UNKNOWN_ERROR:
+            x.innerHTML = "An unknown error occurred."
+            break;
+    }
+}
+</script>
+
+<footer>
+  <p>Posted by: sakec</p>
+  <p>Contact information: <a href="www.sakec.com">
+  www.sakec.com</a>.</p>
+</footer>
+
+</body>
+</html>

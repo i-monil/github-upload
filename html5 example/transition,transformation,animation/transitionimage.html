@@ -1,0 +1,33 @@
+<html>
+	<head>
+		<title>Cross-Fading Images</title>
+		<style>
+			#cf {
+				position:relative;
+				height:281px;
+				width:450px;
+			}
+			#cf img {
+				position:absolute;
+				left:0;
+				opacity: 1;
+				-webkit-transition: opacity 1s ease-in-out;
+				-moz-transition: opacity 1s ease-in-out;
+				-o-transition: opacity 1s ease-in-out;
+				-ms-transition: opacity 1s ease-in-out;	
+				transition: opacity 1s ease-in-out;
+			}
+
+			#cf img.top:hover {
+				opacity:0;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>Cross-fading Images</h1>
+		<div id="cf">
+			<img class="bottom" src="im1.jpg" />
+			<img class="top" src="im2.jpg" />
+		</div>
+	</body>
+</html>
